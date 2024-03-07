@@ -11,6 +11,7 @@ import Login from "./pages/login";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
 
+
 function App() {
   return (
     <AuthProvider>

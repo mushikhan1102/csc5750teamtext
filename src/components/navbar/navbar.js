@@ -2,18 +2,17 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { Link } from 'react-router-dom'; // Import Link
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Login', 'Signup'];
 
-function Navbar
-(props) {
+function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
@@ -26,7 +25,11 @@ function Navbar
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={
+                <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {item}
+                </Link>
+              } />
             </ListItemButton>
           </ListItem>
         ))}
@@ -60,7 +63,9 @@ function Navbar
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+                <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {item}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -73,7 +78,7 @@ function Navbar
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -90,14 +95,8 @@ function Navbar
   );
 }
 
-Navbar
-.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+Navbar.propTypes = {
   window: PropTypes.func,
 };
 
-export default Navbar
-;
+export default Navbar;

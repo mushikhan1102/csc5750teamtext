@@ -18,7 +18,7 @@ function App() {
 
           <Navbar/>
       <Routes>
-            <Route exact path='/register' element={< Register />}></Route>
+            <Route exact path='/signup' element={< Register />}></Route>
             <Route exact path='/login' element={< Login />}></Route>
 
             <Route element={<PrivateRoute />}>

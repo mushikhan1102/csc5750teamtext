@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [data, setData] = useState({
@@ -12,7 +12,7 @@ const Login = () => {
         error: null,
         loading: false,
     });
-    const history = useHistory();
+    const history = useNavigate();
     const { email, password, error, loading } = data;
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });

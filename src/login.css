@@ -1,0 +1,52 @@
+
+.div-container {
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #007bff; 
+    border-radius: 10px;
+  }
+  
+  .div-container h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .input-text {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  

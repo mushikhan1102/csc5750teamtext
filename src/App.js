@@ -10,6 +10,8 @@ import Login from "./pages/login";
 //import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
+import Signup from "./pages/signup";
+
 
 
 function App() {

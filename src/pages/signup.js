@@ -16,7 +16,11 @@ const Signup = () => {
   })
 
   const navigate = useNavigate();
+<<<<<<< HEAD
   const { name, email, password, error, loading } = data;
+=======
+
+>>>>>>> cab9cf3eb41ffe2722090e71563adb178fca7ef0
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -55,7 +59,11 @@ const Signup = () => {
   };
 
 
+<<<<<<< HEAD
   
+=======
+  const { name, email, password, error, loading } = data;
+>>>>>>> cab9cf3eb41ffe2722090e71563adb178fca7ef0
   return (
     <section>
       <h3>Create An Account</h3>
@@ -63,7 +71,11 @@ const Signup = () => {
 
         <div className="input_container">
           <label htmlFor="name">Name</label>
+<<<<<<< HEAD
           <input type="text" name="" value={email} onChange={handleChange} />
+=======
+          <input type="text" name="name" value={name} onChange={handleChange} />
+>>>>>>> cab9cf3eb41ffe2722090e71563adb178fca7ef0
 
         </div>
         <div className="input_container">
@@ -84,6 +96,10 @@ const Signup = () => {
       </form>
     </section>
   )
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> cab9cf3eb41ffe2722090e71563adb178fca7ef0
 
 export default Signup;

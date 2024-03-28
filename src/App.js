@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate, Outlet } from '
 import Navbar from "./components/Navbar"
 import ReactDOM from 'react-dom';
 import Home from "./pages/Home";
-import Register from "./pages/signup";
+import Register from "./pages/Register";
 import AuthProvider from "./context/auth";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Profile from './pages/Profile'
 //import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";

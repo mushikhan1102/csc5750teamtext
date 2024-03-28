@@ -46,7 +46,7 @@ const Login = () => {
     };
     return (
         <section>
-            <h3>Create An Account</h3>
+            <h3>Login to your account</h3>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input_container">
                     <label htmlFor="email">Email</label>

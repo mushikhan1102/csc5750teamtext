@@ -1,12 +1,12 @@
 import React, {Fragment, useContext} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, Outlet } from 'react-router-dom'
-import Navbar from "./components/navbar"
+import Navbar from "./components/Navbar"
 import ReactDOM from 'react-dom';
-//import Home from "./pages/Home";
+import Home from "./pages/Home";
 import Register from "./pages/signup";
 import AuthProvider from "./context/auth";
-import Login from "./pages/login";
-//import Profile from './pages/Profile'
+import Login from "./pages/Login";
+import Profile from './pages/Profile'
 //import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
@@ -19,7 +19,7 @@ function App() {
           <Navbar/>
       <Routes>
             <Route exact path='/register' element={< Register />}></Route>
-            <Route exact path='/login' element={< Login />}></Route>
+            <Route exact path='/Login' element={< Login />}></Route>
 
             <Route element={<PrivateRoute />}>
                 {
@@ -27,13 +27,9 @@ function App() {
                 }
                 
             </Route>
-            {
-              //<Route exact path='/Profile' element={< Profile />}></Route>
-              //<Route exact path='/Home' element={< Home />}></Route>
-              //
-
-            }
-            
+            <Route exact path='/Profile' element={< Profile />}></Route>
+            <Route exact path='/' element={< Home />}></Route>
+            <Route exact path='/Home' element={< Home />}></Route>
             
             
            

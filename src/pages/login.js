@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const [data, setData] = useState({
@@ -12,14 +12,11 @@ const Login = () => {
         error: null,
         loading: false,
     });
-
-    const navigate = useNavigate(); 
+    const history = useHistory();
     const { email, password, error, loading } = data;
-
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setData({ ...data, error: "", loading: true });
@@ -27,25 +24,26 @@ const Login = () => {
             setData({ ...data, error: "All fields are required" });
         } else {
             try {
-                const result = await createUserWithEmailAndPassword(auth, email, password);
+                const result = await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
                 await updateDoc(doc(db, "users", result.user.uid), {
                     isOnline: true,
                 });
                 setData({
-                    name: "",
                     email: "",
                     password: "",
                     error: null,
                     loading: false,
                 });
-                // navigate after login
-                navigate("/"); 
+                history.replace("/");
             } catch (err) {
                 setData({ ...data, error: err.message, loading: false });
             }
         }
     };
-
     return (
         <section>
             <h3>Create An Account</h3>

@@ -2,12 +2,14 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
+import { useAuth } from '../../context/AuthContext';
 
 const drawerWidth = 240;
-const navItems = ['Login', 'Signup'];
 
 function Navbar(props) {
+  const { currentUser } = useAuth();
+  let navItems = currentUser ? ['Home', 'Profile'] : ['Login', 'Signup']; // Adjust navItems based on auth status
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 

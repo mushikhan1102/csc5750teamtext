@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Profile from './pages/Profile'
 //import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
+import HomePage from "./components/HomePage";
 import './App.css';
 
 function App() {
@@ -18,20 +19,19 @@ function App() {
 
           <Navbar/>
       <Routes>
-            <Route exact path='/' element={< Register />}></Route>
             <Route exact path='/register' element={< Register />}></Route>
             <Route exact path='/Login' element={< Login />}></Route>
 
             <Route element={<PrivateRoute />}>
                 {
-                    // doesn't allow you here unless signed in
-                    <Route exact path='/Home' element={< Home />}></Route>
+                    //<Route exact path='/Home' element={< Home />}></Route>
                 }
                 
             </Route>
             <Route exact path='/Profile' element={< Profile />}></Route>
-            <Route exact path='/' element={< Home />}></Route>
             
+            <Route exact path='/Home' element={< Home />}></Route>
+            <Route exact path='/' element={< HomePage />}></Route>
             
             
            

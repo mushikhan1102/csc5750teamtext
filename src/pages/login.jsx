@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../components/Navbar"
 const Login = () => {
   const [data, setData] = useState({
     email: "",
@@ -11,6 +11,7 @@ const Login = () => {
     error: null,
     loading: false,
   });
+
 
   const history = useNavigate();
 
@@ -42,8 +43,11 @@ const Login = () => {
     } catch (err) {
       setData({ ...data, error: err.message, loading: false });
     }
+
+
   };
   return (
+
     <section>
       <h3>Log into your Account</h3>
       <form className="form" onSubmit={handleSubmit}>
@@ -73,6 +77,7 @@ const Login = () => {
         </div>
       </form>
     </section>
+    
   );
 };
 

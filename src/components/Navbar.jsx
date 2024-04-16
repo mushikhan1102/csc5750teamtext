@@ -5,7 +5,6 @@ import { signOut } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
 import { AuthContext } from "../context/auth";
 import { useNavigate } from "react-router-dom";
-
 const Navbar = () => {
   const history = useNavigate();
   const { user } = useContext(AuthContext);
@@ -25,6 +24,7 @@ const Navbar = () => {
       <div>
         {user ? (
           <>
+            <Link to="/Home">Chat</Link>
             <Link to="/profile">Profile</Link>
             <button className="btn" onClick={handleSignout}>
               Logout

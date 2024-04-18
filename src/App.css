@@ -169,6 +169,7 @@ section .form {
 .messages_container {
   position: relative;
   width: 100%;
+  
 }
 .messages_user {
   padding: 10px;

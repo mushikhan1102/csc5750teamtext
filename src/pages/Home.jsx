@@ -14,7 +14,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
-import User from "../components/user";
+import User from "../components/User";
 import MessageForm from "../components/MessageForm";
 import Message from "../components/Message";
 

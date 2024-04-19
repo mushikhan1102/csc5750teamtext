@@ -15,15 +15,19 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
   const [img, setImg] = useState("");
   const [user, setUser] = useState();
+  const [bio, setBio] = useState("");
   const history = useNavigate("");
 
   useEffect(() => {
     getDoc(doc(db, "users", auth.currentUser.uid)).then((docSnap) => {
       if (docSnap.exists) {
         setUser(docSnap.data());
+        setBio(docSnap.data().bio || "");
       }
     });
+  }, []);
 
+  useEffect(() => {
     if (img) {
       const uploadImg = async () => {
         const imgRef = ref(
@@ -31,7 +35,7 @@ const Profile = () => {
           `avatar/${new Date().getTime()} - ${img.name}`
         );
         try {
-          if (user.avatarPath) {
+          if (user?.avatarPath) {
             await deleteObject(ref(storage, user.avatarPath));
           }
           const snap = await uploadBytes(imgRef, img);
@@ -40,6 +44,7 @@ const Profile = () => {
           await updateDoc(doc(db, "users", auth.currentUser.uid), {
             avatar: url,
             avatarPath: snap.ref.fullPath,
+            bio: bio,
           });
 
           setImg("");
@@ -49,17 +54,18 @@ const Profile = () => {
       };
       uploadImg();
     }
-  }, [img]);
+  }, [img, bio]);
 
   const deleteImage = async () => {
     try {
       const confirm = window.confirm("Delete avatar?");
-      if (confirm) {
+      if (confirm && user?.avatarPath) {
         await deleteObject(ref(storage, user.avatarPath));
 
         await updateDoc(doc(db, "users", auth.currentUser.uid), {
           avatar: "",
           avatarPath: "",
+          bio: bio,
         });
         history.replace("/");
       }
@@ -67,6 +73,23 @@ const Profile = () => {
       console.log(err.message);
     }
   };
+
+  const handleBioChange = (e) => {
+    setBio(e.target.value);
+  };
+
+  const saveBio = async () => {
+    try {
+      await updateDoc(doc(db, "users", auth.currentUser.uid), {
+        bio: bio,
+      });
+      alert("Bio updated successfully!");
+    } catch (err) {
+      console.log(err.message);
+      alert("Failed to update bio.");
+    }
+  };
+
   return user ? (
     <section>
       <div className="profile_container">
@@ -93,6 +116,20 @@ const Profile = () => {
           <p>{user.email}</p>
           <hr />
           <small>Joined on: {user.createdAt.toDate().toDateString()}</small>
+          <div className="bio_container" style={{ marginTop: '1rem' }}>
+            <textarea
+              value={bio}
+              onChange={handleBioChange}
+              placeholder="Write about yourself..."
+              rows={3}
+              className="bio_textarea"
+            />
+            <div style={{ marginTop: '0.5rem' }}>
+              <button onClick={saveBio} className="save_bio_button">
+                Save Bio
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

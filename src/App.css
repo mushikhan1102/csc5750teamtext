@@ -9,6 +9,7 @@
   --color-4: grey;
   --color-5: #eb4034;
   --color-6: #333;
+  --color-7: #696F74;
 }
 
 /* Navbar */
@@ -169,6 +170,7 @@ section .form {
 .messages_container {
   position: relative;
   width: 100%;
+  
 }
 .messages_user {
   padding: 10px;
@@ -239,10 +241,11 @@ section .form {
   color: white;
 }
 .friend {
-  background: var(--color-6);
+  background: var(--color-7);
+  -webkit-text-fill-color: white;
 }
 .selected_user {
-  background: var(--color-6);
+  background: var(--color-7);
 }
 .truncate {
   font-size: 14px;

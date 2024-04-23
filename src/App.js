@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Profile from './pages/Profile'
 //import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
+import HomePage from "./components/HomePage";
 import './App.css';
 
 function App() {
@@ -28,8 +29,9 @@ function App() {
                 
             </Route>
             <Route exact path='/Profile' element={< Profile />}></Route>
-            <Route exact path='/' element={< Home />}></Route>
+            
             <Route exact path='/Home' element={< Home />}></Route>
+            <Route exact path='/' element={< HomePage />}></Route>
             
             
            

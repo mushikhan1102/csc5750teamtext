@@ -4,6 +4,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Prior to running this application on your local machine use the following steps to succesfully launch:
+
+create a new folder where you want the porject to be stored
+using the command line enter the newly created file
+once entered to the given folder, run the given command
+git clone https://github.com/mushikhan1102/csc5750teamtext.git
+This will now install the repository to your local machine
+following this, open your code editor
+prior to running the following packages must be installed using the "npm" commmand"
+
+firebase
+moment
+react-dom
+react=router-dom
+react-helmet
+
+Once installed, run "npm start"
+
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -68,3 +87,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

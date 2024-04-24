@@ -1,17 +1,17 @@
 * {
   box-sizing: border-box;
 }
- 
+
 :root {
-  --color-1: #242526;
+  --color-1: black;
   --color-2: white;
-  --color-3: #0084ff;
+  --color-3: #8c8c8c; /* Grey color for chat bubbles */
   --color-4: grey;
   --color-5: #eb4034;
   --color-6: #333;
   --color-7: #696F74;
 }
- 
+
 /* Navbar */
 nav {
   display: flex;
@@ -29,7 +29,7 @@ nav a {
 nav div a {
   margin-right: 20px;
 }
- 
+
 section {
   max-width: 500px;
   margin: 0 auto;
@@ -43,6 +43,7 @@ section h3 {
   font-size: 20px;
   color: var(--color-4);
 }
+
 /* Register */
 section .form {
   margin-top: 30px;
@@ -81,7 +82,7 @@ section .form {
   text-align: center;
   color: var(--color-5);
 }
- 
+
 /* Profile */
 .profile_container {
   display: flex;
@@ -119,7 +120,7 @@ section .form {
 .text_container h3 {
   text-align: left;
 }
- 
+
 .home_container {
   position: relative;
   display: grid;
@@ -198,111 +199,19 @@ section .form {
   outline: none;
   border: none;
 }
- 
+
 .message_form .btn {
   margin-top: -10px;
 }
 .message_form label{
   height: 30px;
   width: 30px;
+  
 }
 .messages {
   height: calc(100vh - 200px);
   overflow-y: auto;
   border-bottom: 1px solid var(--color-6);
 }
-.message_wrapper {
-  margin-top: 5px;
-  padding: 0px 5px;
-}
-.message_wrapper img {
-  width: 100%;
-  border-radius: 5px;
-}
-.message_wrapper p {
-  padding: 10px;
-  display: inline-block;
-  max-width: 50%;
-  text-align: left;
-  border-radius: 5px;
-}
-.message_wrapper small {
-  display: inline-block;
-  margin-top: 15px;
-  opacity: 0.8;
-}
-.message_wrapper.own {
-  text-align: right;
-}
-.me {
-  background: var(--color-3);
-  color: white;
-}
-.friend {
-  background: var(--color-7);
-  -webkit-text-fill-color: white;
-}
-.selected_user {
-  background: var(--color-7);
-}
-.truncate {
-  font-size: 14px;
-  white-space: nowrap;
-  width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.truncate strong {
-  margin-right: 10px;
-}
-.unread {
-  margin-left: 10px;
-  background: var(--color-3);
-  color: white;
-  padding: 2px 4px;
-  border-radius: 10px;
-}
-.sm_screen {
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  .home_container {
-    grid-template-columns: 2fr 3fr;
-  }
-  .message_form {
-    left: 3%;
-    right: 0;
-    bottom: 5px;
-  }
-  .message_wrapper p {
-    max-width: 75%;
-  }
-}
- 
-@media screen and (max-width: 576px) {
-  .home_container {
-    grid-template-columns: 1fr 5fr;
-  }
-  .user_wrapper {
-    display: none;
-  }
-  .sm_container {
-    padding: 10px 0px;
-    text-align: center;
-    cursor: pointer;
-  }
-  .sm_screen {
-    display: inline-block;
-  }
-  .message_form input {
-    width: 50vw;
-    margin: 0px 10px;
-  }
-  .message_form .btn {
-    margin: 0px;
-  }
- 
-  .message_wrapper p {
-    max-width: 100%;
-  }
-}
+.message_wrapper
+{}

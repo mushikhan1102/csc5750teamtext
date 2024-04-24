@@ -12,7 +12,7 @@ once entered to the given folder, run the given command
 git clone https://github.com/mushikhan1102/csc5750teamtext.git
 This will now install the repository to your local machine
 following this, open your code editor
-prior to running the following packages must be installed using the "npm" commmand"
+prior to running the following packages must be installed using the "npm" commmand
 
 firebase
 moment

@@ -4,6 +4,7 @@ const HomePage = () => {
   return (
     <div>
       <header>
+        <h1 style={{ textAlign: 'center', color: '#8c8c8c' }}>TEAM</h1>
         <h1>About the Website</h1>
       </header>
       <main>
@@ -12,6 +13,9 @@ const HomePage = () => {
           Our messaging system allows attachments such as images and GIFs or even full files. You can also customize your profile with a profile picture for more personalization.   </p>
         
       </main>
+      <footer>
+        <p>Developed by: Dominic, Muhammed, Abdullah, Chris, Muhammed Abubakar</p>
+      </footer>
     </div>
   );
 }
